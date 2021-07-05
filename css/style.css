@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FEF0E5;
+  }
+  
+
+  /* Style the header */
+  header {
+    height: 75px;
+  }
+  
+header nav{
+  height: 100%;
+}
+
+  /* Create two columns/boxes that floats next to each other */
+  .sidebar {
+    width: 18%;
+    
+  }
+  
+
+  
+  article {
+    float: left;
+    margin-left: 18%;
+    padding: 10px;
+    width: 82%;
+    background-color: #FEF0E5;
+    height: 100%;
+   
+  }
+  
+  /* heading below the navbar */
+  .heading_1{
+    padding: 10px;
+  }
+  
+  /* Style the footer */
+  footer {
+    color: white;
+  }
+  
+  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+  @media (max-width: 600px) {
+    .sidebar, article {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+
+.form_1,.form_2{
+  width: 49%;
+  float: left;
+  margin-left:10px ;
+  
+}

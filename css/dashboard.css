@@ -1,0 +1,48 @@
+
+
+#page_top{
+  background-color: #FEF0E5;
+  display: block;
+  height: 100%;
+}
+
+/* Style the main content */
+.main_p {
+
+    margin-left: 250px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+    float: inline-start;
+    margin-right: 3%;
+  }
+
+  .sidebar{
+    width: auto;
+  }
+  /* .sidemenu{
+    width:20%;
+    
+    float: left;
+  } */
+
+
+  .main_p table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+  header {
+      height: 80px;
+      margin-left: 110px;
+  }

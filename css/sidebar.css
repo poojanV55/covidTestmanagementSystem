@@ -1,0 +1,94 @@
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  display: block;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #F4903A;
+  overflow-x: hidden;
+  padding-top: 1%;
+}
+
+/*Style sidebar heading*/
+.sh_text{
+  padding: 1px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #FEF0E5;
+  display: block;
+  opacity: 40%;
+}
+
+.sidebar i{
+  padding: 4px 6px 4px 6px;
+}
+
+.dropdown-container hr{
+  border-bottom: 0ch  x;
+  width: 80%;
+}
+
+
+/*Dropdown*/
+.sidebar  .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FEF0E5;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.sidebar .dropdown-container {
+  display: none;
+  background-color: #f1ae72;
+  padding-left: 8px;
+}
+
+.sidebar .dropdown-container a{
+  font-size: 15px;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #7dbdf1;
+  
+}
+
+
+
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 5px 8px 4px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #FEF0E5;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #94c9f5;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 15%; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

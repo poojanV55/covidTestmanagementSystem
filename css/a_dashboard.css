@@ -1,0 +1,33 @@
+body {
+    background-color: #FEF0E5;
+    }
+  /* Style the main content */
+  .main_p {
+  
+      margin-left: 200px; /* Same as the width of the sidenav */
+      padding: 0px 10px;
+      float: inline-start;
+  
+    }
+  
+    .sidebar{
+      width: auto;
+    }
+    /* .sidemenu{
+      width:20%;
+      
+      float: left;
+    } */
+  
+
+  .output h3{
+    color: chocolate;
+
+
+  }
+
+  
+  
+  
+  
+  
