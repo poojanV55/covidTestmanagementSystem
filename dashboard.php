@@ -1,3 +1,5 @@
+<?php include "connect.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,9 @@
     <!-- Custom styles for this template-->
    <!-- Load an icon library -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/sb-admin-2.min.css"> 
@@ -67,29 +71,69 @@
 
 
 
-<div class="main_p">    
-    <h1>Statewise Testing Dashboard </h1>
-     
-            <table>
-            <tr>
-                <th>S No.</th>
-                <th>State Name</th>
-                <th>Total Test done</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Gujarat</td>
-                <td>5</td>
-            </tr> 
-            <tr>
-                <td>2</td>
-                <td>Maharashtra</td>
-                <td>10</td>
-            </tr>
-            
+<article style="margin-left: 225px;">
+         <!-- Begin Page Content -->
+         <div class="container-fluid">
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-800" style="color: #9E5E31;margin-top: 20px; " align="center">Statewise Test Details</h1>
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4 " style="margin-top: 20px;">
+        <div class="card-header py-3" style="background-color: #F5E3A6; ">
+            <h6 class="m-0 font-weight-bold text" style="color: #b17f4ac9;">Statewise Test Details</h6>
+        </div>
+        <div class="card-body" style="background-color: #FFFFE8;">
+            <div class="table-responsive" style="background-color: #FFFFE8;">
+            <form name="assignto" method="post">
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr align="center">
+                        <th>Sno.</th>
+                        <th>State Name</th>
+                        <th>Total Tests</th>
+                        
+                    </tr>
+                </thead>
+                  <tfoot>
+                        <tr align="center">
+                        <th>Sno.</th>
+                        <th>State Name</th>
+                        <th>Total Tests</th>
+                    </tr>
+                </tfoot>
+                <tbody >
+<!-- php of table -->
+<?php
+$query=mysqli_query($link, "SELECT p.state,count(tr.id) AS total_tests from patients p JOIN test_record tr ON p.mobile_number = tr.patient_mobile_number GROUP BY p.state;");
+$count = 1;
+while($row=mysqli_fetch_array($query)){
+?>
+    <tr align="center">
+        <td align="center"><?php echo $count; ?></td>
+        <td><?php echo $row['state']; ?></td>
+        <td><?php echo $row['total_tests']; ?></td>
+    </tr>
+
+
+<?php
+$count++;
+}
+?>
+                </tbody>
             </table>
+                 </form>
+        </div>
+    </div>
 </div>
 
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+  </article>
 
 
 

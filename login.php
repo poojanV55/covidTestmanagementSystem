@@ -51,7 +51,7 @@ $username_err = $password_err="";
                         if(password_verify($password,$hashed_password)){
 
                             $_SESSION['loggedin'] = true;
-                            $_SESSION['id'] = $id;
+                            $_SESSION['aid'] = $id;
                             $_SESSION['username'] = $username;
                             
                             header('location:a_dashboard.php');

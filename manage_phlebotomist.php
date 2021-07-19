@@ -2,6 +2,11 @@
 
 include "connect.php";
 
+include "connect.php";
+    if($_SESSION['loggedin']!=true)
+    {
+        header('location:logout.php');
+    }else{
 ?>
 
 
@@ -48,11 +53,11 @@ include "connect.php";
 
   <article>
      <!-- Page Heading -->
-     <h1 class="h3 mb-2 text-active-800">Manage Phlebotomist</h1>
+     <h1 class="h3 mb-2 text-active-800" style="margin-left:40% ; color:#9E5E31;";>Manage Phlebotomist</h1>
     
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4 ">
+    <div class="card shadow mb-4 " style="margin-top: 20px;">
         <div class="card-header py-3" style="background-color: #F5E3A6;">
             <h6 class="m-0 font-weight-bold text" style="color: #b17f4ac9;">Phlebotomist Information</h6>
         </div>
@@ -169,3 +174,4 @@ if($act == 'delete'){
 </body>
 </html>
 
+<?php } ?>

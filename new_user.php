@@ -18,7 +18,9 @@ include ("connect.php");
     <!-- Load an icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap" rel="stylesheet">
 <style>
   <?php include "css/sidebar.css";?>
   <?php include "css/style.css";?>
@@ -98,7 +100,7 @@ catch(Exception $e){
 
 <!-- The sidebar -->
 <div class="sidebar">
-  <a href="#Title"><i class="fas fa-virus"></i> COVID-19 TMS</a>
+  <a href="#Title"><i class="fas fa-virus" ></i> COVID-19 TMS</a>
   <hr style="width: 85%;">
   <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
   <hr style="width: 85%;">
@@ -119,11 +121,11 @@ catch(Exception $e){
   
   <article>
     <div class="heading_1">
-      <h1 style="font-size: 30px;">Covid 19 Testing</h1>
+      <h1 style="font-size: 30px; color:#9E5E31;" >Covid 19 Testing</h1>
     </div>
 <form name="newtesting" method="post">
   <fieldset class="form_1 shadow p-3 mb-5 bg-body rounded">
-    <legend>Personal Details</legend>
+    <legend style="color:#ec8b40;">Personal Details</legend>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Full name</label>
     <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" pattern="[A-Za-z ]+" title="letters only" required="true">
@@ -159,7 +161,7 @@ catch(Exception $e){
 
 
   <fieldset class="form_2 shadow p-3 mb-5 bg-body rounded">
-    <legend>Testing Details</legend>
+    <legend style="color:#ec8b40;">Testing Details</legend>
   
   <div class="mb-3">
      <label>Test Type</label>

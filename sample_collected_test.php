@@ -55,7 +55,7 @@
          <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Sample Collected Tests</h1>
+<h1 class="h3 mb-2 text-800" style="color: #9E5E31; margin-left:39%">Sample Collected Tests</h1>
 
 
 <!-- DataTales Example -->
@@ -106,7 +106,7 @@ while($row=mysqli_fetch_array($query)){
         <td><?php echo $row['test_type']; ?></td>
         <td><?php echo $row['test_time_slot']; ?></td>
         <td><?php echo $row['registration_date']; ?></td>
-        <td><a href="test_details.php?tid=<?php echo $row['test_id'];?>&&oid=<?php echo $row['order_number'];?>" class="btn btn-info btn-sm">View Details</a> </td>
+        <td><a href="test_details.php?tid=<?php echo $row['test_id'];?>&&oid=<?php echo $row['order_number'];?>" class="btn btn-info btn-sm" style="background-color: #f99023; border-color: #de8b36;">View Details</a> </td>
         
     </tr>
 

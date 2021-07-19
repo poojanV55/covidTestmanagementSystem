@@ -2,11 +2,11 @@
     session_start();
     include "connect.php";
 
-    //validating session
-    // if($_SESSION['loggedin']!=true)
-    // {
-    //     header('location:logout.php');
-    // }else{
+    // validating session
+    if($_SESSION['loggedin']!=true)
+    {
+        header('location:logout.php');
+    }else{
         
 ?>
 
@@ -62,13 +62,13 @@
   $total_test=mysqli_num_rows($query);
   $query1 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'Assigned';");
   $total_assigned_test=mysqli_num_rows($query1);
-  $query2 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'On the way for collection';");
+  $query2 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'On the way for sample collection';");
   $total_on_the_way_test=mysqli_num_rows($query2);
   $query3 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'Sample Collected';");
   $total_sample_collected=mysqli_num_rows($query3);
-  $query4 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'Sample sent to lab';");
+  $query4 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'Sent to Lab';");
   $total_sample_sent_to_lab_test=mysqli_num_rows($query4);
-  $query5 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'Report Delivered';");
+  $query5 = mysqli_query($link,"SELECT id FROM ctm.test_record where report_status = 'Delivered';");
   $total_report_delivered_test=mysqli_num_rows($query5);
   $query6 = mysqli_query($link,"SELECT patient_id FROM ctm.patients;");
   $total_patients=mysqli_num_rows($query6);
@@ -90,10 +90,9 @@
     <div class="container-fluid">
 
 <!-- Page Heading -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a href="bwdates-report-ds.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+<div class="d-sm-flex align-items-center justify-content-between mb-4" >
+    <h1 class="h2 mb-0 text" style="color:#9E5E31; margin-left:43%" >Dashboard</h1>
+    
 </div>
 
 <script src="https://kit.fontawesome.com/cdfa1f424e.js" crossorigin="anonymous"></script>
@@ -131,7 +130,7 @@
         <div class="card border-warning mb-3" style="max-width: 18rem; height: 12rem;">
         <div class="card-header" style="background-color: #fffbef;"><center><i class="fas fa-motorcycle fa-2x text-gray-500"></i></center></div>
         <div class="card-body text-warning">
-            <h5 class="card-title" style="font-size:large;margin-top: 11px;"><center>ON THE WAY FOR THE SAMPLE COLLECTION</center></h5>
+            <h5 class="card-title" style="font-size:large;margin-top: 5px;"><center>ON THE WAY FOR THE SAMPLE COLLECTION</center></h5>
         </div>
         <div class="output" align="center">
               <h3 style="margin-bottom: 10px;"><?php echo ("$total_on_the_way_test"); ?></h3>
@@ -233,5 +232,5 @@
 </html>
 
 <?php 
-    // }
+    }
 ?>

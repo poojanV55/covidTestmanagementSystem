@@ -61,12 +61,12 @@
   
   <article style="height: 100%;">
     <div class="heading_1">
-      <h1 style="font-size: 30px;">Search Report</h1>
+      <h1 style="font-size: 30px; color:#9E5E31;" >Search Report</h1>
     </div>
 <form action="test_report.php" method="post" class="form_1 shadow p-3 mb-5 bg-body rounded">
   
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Search By Patient Name or Mobile Number or Order Number</label>
+    <label for="exampleFormControlInput1" class="form-label" style="color:#b17f4ac9;">Search By Patient Name or Mobile Number or Order Number</label>
     <input type="text" class="form-control" id="searchinfo" name="searchinfo" required="true" placeholder="Enter name or mobile number or Order Number">
   </div>
   <div class="mb-6">

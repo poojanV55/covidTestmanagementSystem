@@ -2,11 +2,23 @@
 
   include "connect.php";
   session_start();
-  include "connect.php";
-    if($_SESSION['loggedin']!=true)
-    {
-        header('location:logout.php');
-    }else{
+
+  if(isset($_POST['update'])){
+      $admin_id = $_SESSION['aid'];
+      $admin_name = $_POST['admin_name'];
+      $mob_num = $_POST['mobile_number'];
+      $email = $_POST['email'];
+
+      $query = mysqli_query($link,"UPDATE admin_details SET a_name='$admin_name',a_mobile_num = '$mob_num' , a_email_id='$email' where a_id='$admin_id';");
+      if($query){
+          echo '<script>alert("Profile has been updated")</script>';
+      }
+      else{
+        echo '<script>alert("Something went wrong. Please try again.")</script>';
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,62 +41,11 @@
         <?php include "css/sidebar.css";?>
     </style>
     
-  <script>
-  function emp_id_availability(){
-    $('#loadeerIcon').show();
-    jQuery.ajax({
-      url:"check_availability.php",
-      data:'employee_id='+$("#emp_id").val(),
-      type: 'POST',
-      success:function (data){
-        $("#emp_id_avalability_status").html(data);
-        $("#loaderIcon").hide();
-      },
-      error: function(){}
-    });
-  }
-  </script>
+  
 
-
-    <title>Add Phlebotomist</title>
+    <title>Admin Details</title>
 </head>
 <body>
-
-<?php
-
-if(isset($_POST['submit'])){
-  $emp_id = $_POST['emp_id'];
-  $p_full_name = $_POST['p_full_name'];
-  $p_mobile_number = $_POST['p_mobile_number'];
-
-
-  if(empty($emp_id)){
-    echo "<script>alert('Please enter employee id.');</script>";  
-  }
-  if(empty($p_full_name)){
-    echo "<script>alert('Please enter fullname.');</script>";  
-  }
-  if(empty($p_mobile_number)){
-    echo "<script>alert('Please enter moobile number.');</script>";  
-  }
-
-  if(!(empty($emp_id) && empty($p_full_name) && empty($p_mobile_number))){
-    $query = "INSERT INTO ctm.phlebotomist(emp_id,full_name,mobile_num) VALUES('$emp_id','$p_full_name','$p_mobile_number');";
-    $result = mysqli_query($link,$query);
-    if($result)
-    {
-      echo "<script>alert('Phlebotomist added succesfully.');</script>";  
-    }
-    else{
-      echo "<script>alert('Something went wrong , please try again !!');</script>";
-    }
-  }
-  }
-?>
-
-
-
-
 
 <!-- topbar -->
 <?php include "a_navbar.php";?>
@@ -99,34 +60,43 @@ if(isset($_POST['submit'])){
 <?php include "a_sidebar.php";?>
 <!-- End of side menu -->
   
-  <article style="margin-left:38%;">
+
+  <article >
     <div class="heading_1">
-      <h1 style="font-size: 30px; margin-left:13%; 
-      color:#9E5E31;">Add Phlebotomist</h1>
+      <h1 style="font-size: 30px;  
+      color: #b17f4ac9;"><center>Admin Profile</h1>
     </div>
-<form name="add_phlebotomist" method="post">
-  <fieldset class="form_1 shadow p-3 mb-5 bg-body rounded">
+<?php
+$aid = $_SESSION['aid'];
+$res = mysqli_query($link,"SELECT * FROM admin_details WHERE a_id ='$aid'");
+$cnt = 1;
+while($row = mysqli_fetch_array($res)){
+?>
+
+<div >
+<form name="admin_profile" method="post" >
+  <fieldset class="form_1 shadow p-3 mb-5 bg-body rounded" style="margin-left: 24%;">
     <legend>Personal Information</legend>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Employee ID</label>
-    <input type="text" class="form-control" id="emp_id" name="emp_id" placeholder="Enter employee id.." required="true" onBlur="emp_id_availability()" required>
-    <span id="emp_id_avalability_status" style="font-size:12px ;"></span>
+    <label for="exampleFormControlInput1" class="form-label">Admin Name</label>
+    <input type="text" class="form-control" name="admin_name" value="<?php  echo $row['a_name'];?>" required='true'>
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-    <input type="text" class="form-control" id="p_full_name" name="p_full_name"  placeholder="Enter your full name..." pattern="[A-Za-z ]+" title="letters only" required="true" required>
+    <label for="exampleFormControlInput1" class="form-label">Email Id</label>
+    <input type="email" class="form-control" name="email" value="<?php  echo $row['a_email_id'];?>" required='true'>
   </div>
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-    <input type="text" class="form-control" id="p_mobile_number" name="p_mobile_number" placeholder="Please enter your mobile number" pattern="[0-9]{10}" title="10 numeric characters only" required="true" >
+    <input type="text" class="form-control" name="mobile_number" value="<?php  echo $row['a_mobile_num'];?>" required='true' maxlength='10'>
   </div>
   <div class="mb-6">
-    <input type="submit" class="btn btn-primary" name="submit" id="submit" style="width: 100%; background-color: #E58423; border-color:#E2872C;" >
+     <input type="submit" class="btn btn-primary btn-user btn-block" style="background-color: #F4903A; border-color: #F4903A;" name="update" id="update" value="Update">                           
   </div>
   </fieldset>
+<?php } ?>
 
 </form>
-
+</div>
 
   </article>
 
@@ -174,4 +144,3 @@ if(isset($_POST['submit'])){
 </body>
 </html>
 
-<?php } ?>

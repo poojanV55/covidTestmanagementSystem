@@ -14,10 +14,56 @@
         <?php include "css/signup.css"; ?>
         body{
             background-color: #FEF0E5;
+            
         }
+        .bg {
+            animation:slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+            bottom:0;
+            left:-50%;
+            opacity:.5;
+            position:fixed;
+            right:-50%;
+            top:0;
+            z-index:-1;
+}
+
+            .bg2 {
+            animation-direction:alternate-reverse;
+            animation-duration:4s;
+            }
+
+            .bg3 {
+            animation-duration:5s;
+            }
+
+            .content {
+            border-radius:.25em;
+            box-sizing:border-box;
+            left:50%;
+            padding:10vmin;
+            position:fixed;
+            text-align:center;
+            top:50%;
+            transform:translate(-50%, -50%);
+            }
+
+            h1 {
+            font-family:monospace;
+            }
+
+            @keyframes slide {
+            0% {
+                transform:translateX(-25%);
+            }
+            100% {
+                transform:translateX(25%);
+            }
+            }
     </style>
     <script>
         <?php include "js/signup.js";?>
+   
     </script>
 
 
@@ -26,10 +72,13 @@
 <title>Sign Up</title>
 </head>
 <body>
-    
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
 
     <div class="container">
-        <div class="row">
+        <div class="row" style="width: 100%">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-login">
                     <div class="panel-heading">
@@ -63,15 +112,7 @@
                                             </div>  
                                         </div>
                                     </div>
-                                    <div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="" tabindex="4" class="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div>            
+                                              
                                 </form>
 
 
@@ -129,7 +170,7 @@
 </body>
 
 
-
+</div>
 
 
 

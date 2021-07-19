@@ -28,6 +28,7 @@
     
    <style>
         <?php include "css/sidebar.css";?>
+        
     </style>
     
     <title>All Test</title>
@@ -55,18 +56,18 @@
          <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">All Tests</h1>
+<h1 class="h3 mb-2 text-800" style="color: #9E5E31;margin-left:45%">All Tests</h1>
 
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4 ">
         <div class="card-header py-3" style="background-color: #F5E3A6;">
-            <h6 class="m-0 font-weight-bold text" style="color: #b17f4ac9;">All test Information</h6>
+            <h6 class="m-0 font-weight-bold text" style="color: #b17f4ac9; ">All test Information</h6>
         </div>
         <div class="card-body" style="background-color: #FFFFE8;">
             <div class="table-responsive" style="background-color: #FFFFE8;">
             <form name="assignto" method="post">
-<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<table class="table table-bordered" id="dataTable"  width="100%" cellspacing="0" style="color:#785D49; border: 1px solid #785D49;">
                 <thead>
                     <tr>
                         <th>Sno.</th>
@@ -99,14 +100,14 @@ $count = 1;
 while($row=mysqli_fetch_array($query)){
 ?>
     <tr>
-        <td><?php echo $count; ?></td>
+        <td align="center"><?php echo $count; ?></td>
         <td><?php echo $row['order_number']; ?></td>
         <td><?php echo $row['full_name']; ?></td>
         <td><?php echo $row['mobile_number']; ?></td>
         <td><?php echo $row['test_type']; ?></td>
         <td><?php echo $row['test_time_slot']; ?></td>
         <td><?php echo $row['registration_date']; ?></td>
-        <td><a href="test_details.php?tid=<?php echo $row['test_id'];?>&&oid=<?php echo $row['order_number'];?>" class="btn btn-info btn-sm">View Details</a> </td>
+        <td><a href="test_details.php?tid=<?php echo $row['test_id'];?>&&oid=<?php echo $row['order_number'];?>" class="btn btn-info btn-sm" style="background-color: #f99023; border-color: #de8b36;">View Details</a> </td>
         
     </tr>
 

@@ -60,12 +60,12 @@ include ("connect.php");
   
   <article style="height: 100%; margin-left:18%; color:#E2872C;">
       <div class="heading_1">
-        <h1 style="font-size: 30px;">Covid 19 Testing | Already registered User</h1>
+        <h1 style="font-size: 30px; color:#9E5E31;" >Covid 19 Testing | Already registered User</h1>
       </div>
       <form method="post" class="form_1 shadow p-3 mb-5 bg-body rounded">
         
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Registered Mobile Number</label>
+          <label for="exampleFormControlInput1" class="form-label" style="color: #b17f4ac9;">Registered Mobile Number</label>
           <input type="text" class="form-control" id="mobilenumber" name="mobilenumber" placeholder="Enter your mobile number" pattern="[0-9]{10}" title="10 numeric characters only" required="true">
         </div>
         <div class="mb-6">
