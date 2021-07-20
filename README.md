@@ -5,7 +5,7 @@
 
 3: After starting the thelocalhost server from xamp.
 
-4: create a database with ctm name and Import the sql file that is attached with the file.
+4: create a database with ctm name and Import the sql file that is attached with the file.(File name is : ctm sql database).
 
 4: Now you can run the project directly
 
